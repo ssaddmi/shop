@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../img/logo.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saint-P shop</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <style>
+    body {
+      background-image: url(../img/background.svg); 
+      background-attachment: fixed; 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+      background-position: center center; 
+      align-items: center;
+    }
+
+    .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px; /* Отступ сверху */
+    }
+
+    .relMain {
+      font-size: 22pt;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 500ms ease;
+      color:#222
+    }
+
+    .relMain:hover {opacity: 0.5}
+
+    .add {background-color:#F5F5F5;border:1px solid; font-size: 14pt;}
+    #text2 {display:none}
+    
+    .start {
+      display:none;
+      position: relative;
+      border: 1px solid black;
+      background-color:#F5F5F5;
+      padding: 10px;
+      width: 60%;
+      font-size: 14pt;
+      text-align: center;
+      
+      margin: 10px 10%;
+    }
+
+    #block1, #block2, #block3 {
+      left: 40%;
+      transform: translate(-50%, -10%);
+      
+    }
+    
+    #wrap1 {
+      position: relative;
+      top: -15%;
+      left: 50%;
+      transform: translate(-50%, -8%);
+      border: 1px solid black;
+      padding: 10px;
+      opacity: 0.1;
+      width: 35%;
+      max-width: 1000px;
+      align-items: center;
+      margin-top: 15%;
+    }
+
+    #logo{
+      position: absolute;
+      width: 100%;
+    }
+    
+    @media (min-width: 900px) {
+      #wrap1 {
+        margin-top: 6%;
+        width: 15%;
+        }
+        .relMain {
+          font-size: 28pt;
+        }
+      
+    }
+    
+
+  </style>
+  <script>
+  $(document).ready(function(){
+    $("#wrap1").animate({ opacity: 1 }, 'slow', 'linear');
+});
+
+    $(document).ready(function(){
+        $("#wrap1").addClass("add");
+        $("#wrap1").animate({height:'auto'},20);
+        $("#wrap1").animate({width:'90%'},2000,function(){
+          $("#text1").hide(2000,function(){ $("#text2").show(2000,function(){
+            $("#block1").show(500).animate({width:'60%'},1000).animate({"font-size":"14pt","text-align":"center", "padding":"10px"},2000);
+            $("#block2").show(500).animate({width:'60%'},1000).animate({"font-size":"14pt","text-align":"center", "padding":"10px"},2000);
+            $("#block3").show(500).animate({width:'60%'},1000).animate({"font-size":"14pt","text-align":"center", "padding":"10px"},2000);
+
+          });
+
+
+        });
+        });
+
+      
+    });
+  </script>
+  </head>
+  <body>
+    <div class="center-container">    
+      <a href="${process.env.PUBLIC_URL}/index.html" class="relMain">На главную</a>
+    </div>
+    <img id="logo" src="../img/logo.svg" alt="Logo" />
+    <div id="wrap1">
+      <p id="text1" style="font-size: 22pt; text-align: center;">Saint-P shop</p>
+      <div id="text2">
+        <p><b>Saint-P shop</b> - это не просто магазин одежды, это целый мир стиля и индивидуальности, где каждый найдет что-то особенное для себя. </p>
+          <p>Наш магазин отличается от других своим неповторимым подходом к моде и дизайну. Мы верим в красоту простых форм и минималистичных элементов, которые придают вашему образу неповторимый шарм. Наши футболки, свитшоты, и джинсы - это не просто предметы гардероба, это произведения искусства, которые выражают вашу уникальность и стиль.</p>
+            <p>Мы гордимся нашим ассортиментом, который постоянно обновляется новыми коллекциями, отражающими последние тенденции моды. В Saint-P shop вы всегда найдете что-то свежее и актуальное.</p>
+              <p>Но наш магазин - это не только о моде. Мы создаем атмосферу дружелюбия и вдохновения, где каждый клиент чувствует себя как дома. Наша команда профессионалов всегда готова помочь вам подобрать идеальный наряд и ответить на все ваши вопросы. </p>
+              <p>Присоединяйтесь к нам в Saint-P shop и откройте для себя новые горизонты стиля и моды. Добро пожаловать в мир индивидуальности и стиля!</p>
+            </div>
+          </div>
+
+            <div id="block1" class="start">Телефон: +7(988)-900-90-90</div>
+            <div id="block2" class="start">E-mail: Saint-P@gmail.com</div>
+            <div id="block3" class="start">Адрес: г. Санкт-Петербург, ул. Большая морская, 17</div>
+          </div>
+
+  </body>
+</html>

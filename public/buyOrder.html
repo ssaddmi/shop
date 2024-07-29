@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="../img/logo.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saint-P shop</title>
+  <style>
+    body {
+      background-image: url(../img/background.svg); 
+      background-attachment: fixed; 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+      background-position: center center; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      position: absolute;
+    }
+    .form-container input[type="text"], 
+    .form-container input[type="email"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-container button {
+      background-color: #222;
+      color: white;
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .form-container button:hover {
+      background-color: #444;
+    }
+
+    .logo-container {
+      position: relative;
+      text-align: center;
+      top: -35vh;
+      width: 20%;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img{
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    @media (max-width: 900px){
+      .logo-container{
+        width: 70%
+      }
+    }
+  </style>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div class="logo-container">
+    <a href="${process.env.PUBLIC_URL}/index.html" class="relMain"><img id="logoOrder" src="../img/logo.svg" alt="Logo"></a>
+  </div>
+  <div class="form-container">
+    <h2>Заполните форму</h2>
+    <form>
+      <input type="text" name="phone" placeholder="Введите ваш телефон" required >
+      <input type="email" name="email" placeholder="Введите ваш e-mail" required >
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+</body>
+</html>
